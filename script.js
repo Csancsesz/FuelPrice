@@ -1,15 +1,17 @@
-function mywrite() {
-    var a = parseFloat(document.getElementById("csm").value);   // fuel / 100km
-    var b = parseFloat(document.getElementById("dist").value);  // distance
-    var c = parseFloat(document.getElementById("price").value); // unit price
+function calculate() {
+    var consumption = parseFloat(document.getElementById("csm").value); // liter / 100km
+    var distance = parseFloat(document.getElementById("dist").value);   // km
+    var unitPrice = parseFloat(document.getElementById("price").value); // price / liter
 
-    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+    if (isNaN(consumption) || isNaN(distance) || isNaN(unitPrice)) {
         document.getElementById("result").innerText = "Please enter valid numbers!";
         return;
     }
 
-    var fuelUsed = (b / 100) * a;
-    var totalCost = fuelUsed * c;
 
-    document.getElementById("result").innerText = "The price is: " + totalCost.toFixed(2);
+    var fuelNeeded = (consumption * distance) / 100;
+    var totalCost = fuelNeeded * unitPrice;
+
+    document.getElementById("result").innerText = 
+        `The price is: ${totalCost.toFixed(2)}`;
 }
