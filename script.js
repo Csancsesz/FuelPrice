@@ -1,14 +1,3 @@
-// document.getElementById("btn").onclick = function() {write()};
-
-// function write(){
-// var a=parseFloat(document.getElementById("csm").value);
-// var b=parseFloat(document.getElementById("dist").value);
-// var c=parseFloat(document.getElementById("price").value);
-
-// console.log(a,b,c);
-
-//     document.getElementById("result").innerText=""+"";
-// }
 function mywrite() {
     var a = parseFloat(document.getElementById("csm").value);   // fuel / 100km
     var b = parseFloat(document.getElementById("dist").value);  // distance
